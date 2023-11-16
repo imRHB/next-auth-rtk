@@ -1,18 +1,23 @@
 import "../styles/tailwind.css";
 
+import { getServerSession } from "next-auth";
+
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import AuthProvider from "./(components)/AuthProvider";
+import { authOptions } from "./api/auth/[...nextauth]/options";
 
 export const metadata = {
     title: "Next JS | Next Auth | RTK",
     description: "Implementing Next Auth in Next JS with Redux-Toolkit Query!",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+    const session = await getServerSession(authOptions);
+
     return (
         <html lang="en">
-            <AuthProvider>
+            <AuthProvider session={session}>
                 <body className="bg-zinc-50" suppressHydrationWarning={true}>
                     <div className="mx-2 md:mx-0 sticky top-8 z-50">
                         <Header />

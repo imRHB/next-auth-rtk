@@ -9,7 +9,9 @@ export default function Public() {
             <div className="space-y-2">
                 <h3 className="text-lg font-semibold">Public</h3>
 
-                <p>Public page view!</p>
+                <p>
+                    Public page view, you don&apos;t need to authorize yourself!
+                </p>
             </div>
         </section>
     );

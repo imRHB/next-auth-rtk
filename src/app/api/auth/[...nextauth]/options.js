@@ -1,7 +1,8 @@
+import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
-export const options = {
+export const authOptions = {
     providers: [
         GithubProvider({
             profile(profile) {
@@ -50,3 +51,5 @@ export const options = {
         },
     },
 };
+
+export default NextAuth(authOptions);

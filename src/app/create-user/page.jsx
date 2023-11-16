@@ -1,32 +1,29 @@
 import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-
 import { authOptions } from "../api/auth/[...nextauth]/options";
 
 export const metadata = {
-    title: "Server Member",
-    description: "Server side rendering",
+    title: "Create User",
+    description: "Create new user",
 };
 
-export default async function ServerMember() {
+export default async function CreateUser() {
     const session = await getServerSession(authOptions);
-
-    if (!session) {
-        redirect("/api/auth/signin?callbackUrl=/server-member");
-    }
 
     return (
         <section>
             <div className="space-y-2">
-                <h3 className="text-lg font-semibold">Server</h3>
+                <h3 className="text-lg font-semibold">New user</h3>
 
-                <p>Server side rendering!</p>
+                <p>
+                    Create new user, options available only for{" "}
+                    <code>ADMIN</code> role!
+                </p>
 
-                {session?.user && (
+                {session?.user?.role === "ADMIN" && (
                     <div>
                         <p className="font-semibold mb-2">
-                            You are seeing this page, cause you have authorized
-                            yourself!
+                            You should see this page only if you have the{" "}
+                            <code>ADMIN</code> role
                         </p>
                         <pre>{session?.user?.email}</pre>
                         <pre>{session?.user?.name}</pre>
