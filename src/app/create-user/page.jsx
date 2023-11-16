@@ -1,5 +1,6 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/options";
+
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export const metadata = {
     title: "Create User",

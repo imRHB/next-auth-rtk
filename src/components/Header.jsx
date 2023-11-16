@@ -1,16 +1,13 @@
 import { getServerSession } from "next-auth";
 
-import { authOptions } from "@/app/api/auth/[...nextauth]/options";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import AppLink from "./AppLink";
 
 const navigation = [
     { name: "Home", href: "/" },
-    { name: "C-Member", href: "/client-member" },
-    { name: "S-Member", href: "/server-member" },
-    { name: "Public", href: "/public" },
-    { name: "Create User", href: "/create-user" },
-    // { name: "User", href: "/user" },
-    // { name: "Profile", href: "/profile" },
+    { name: "Protected (client)", href: "/protected/client" },
+    { name: "Protected (server)", href: "/protected/server" },
+    { name: "Profile", href: "/profile" },
 ];
 
 export default async function Header() {
@@ -34,7 +31,7 @@ export default async function Header() {
                 ) : (
                     <AppLink
                         name="Sign in"
-                        href="/api/auth/signin?callbackUrl=/client-member"
+                        href="/api/auth/signin?callbackUrl=/profile"
                     />
                 )}
             </nav>

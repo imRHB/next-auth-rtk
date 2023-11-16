@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import AuthProvider from "./(components)/AuthProvider";
-import { authOptions } from "./api/auth/[...nextauth]/options";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
 export const metadata = {
     title: "Next JS | Next Auth | RTK",
@@ -17,8 +17,8 @@ export default async function RootLayout({ children }) {
 
     return (
         <html lang="en">
-            <AuthProvider session={session}>
-                <body className="bg-zinc-50" suppressHydrationWarning={true}>
+            <body className="bg-zinc-50" suppressHydrationWarning={true}>
+                <AuthProvider session={session}>
                     <div className="mx-2 md:mx-0 sticky top-8 z-50">
                         <Header />
                     </div>
@@ -26,8 +26,8 @@ export default async function RootLayout({ children }) {
                         <div className="my-20 min-h-[50vh]">{children}</div>
                     </main>
                     <Footer />
-                </body>
-            </AuthProvider>
+                </AuthProvider>
+            </body>
         </html>
     );
 }
