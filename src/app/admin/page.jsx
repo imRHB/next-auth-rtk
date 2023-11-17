@@ -1,3 +1,5 @@
+import NewUserForm from "../(components)/NewUserForm";
+
 export const metadata = {
     title: "Admin",
     description: "Admin page",
@@ -13,6 +15,8 @@ export default async function AdminPage() {
                     You are viewing this page because you have{" "}
                     <code>ADMIN</code> role!
                 </p>
+                <div className="border-t border-dashed my-4" />
+                <NewUserForm />
             </div>
         </section>
     );
