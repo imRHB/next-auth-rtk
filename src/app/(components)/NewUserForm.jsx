@@ -74,7 +74,7 @@ export default function NewUserForm() {
       focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
                         onChange={handleChange}
                         value={formData.email}
-                        placeholder="jane@email.com"
+                        placeholder="jane@mail.com"
                         required
                     />
                 </div>
