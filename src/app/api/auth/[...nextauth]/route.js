@@ -49,6 +49,17 @@ export const authOptions = {
 
             return session;
         },
+        /* async jwt({ token, trigger, session }) {
+            if (trigger === "update" && session?.name) {
+                token.name = session.name;
+            }
+
+            return token;
+        },
+        adapter: MongoDBAdapter(clientPromise),
+        session: {
+            strategy: "jwt",
+        }, */
     },
 };
 

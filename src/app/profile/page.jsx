@@ -25,8 +25,18 @@ export default async function ProfilePage() {
                             </code>
                         </p>
                         <div className="border-t border-dashed my-4" />
-                        <pre>{session?.user?.name}</pre>
-                        <pre>{session?.user?.role}</pre>
+                        <pre>
+                            <span className="font-bold">Email</span>:{" "}
+                            {session?.user?.email}
+                        </pre>
+                        <pre>
+                            <span className="font-bold">Name</span>:{" "}
+                            {session?.user?.name}
+                        </pre>
+                        <pre>
+                            <span className="font-bold">User role</span>:{" "}
+                            {session?.user?.role}
+                        </pre>
                     </div>
                 ) : (
                     <div>

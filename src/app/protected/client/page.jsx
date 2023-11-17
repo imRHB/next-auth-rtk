@@ -1,7 +1,6 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
 
 /* export const metadata = {
     title: "Protected (Client)",
@@ -10,10 +9,10 @@ import { redirect } from "next/navigation";
 
 export default function ProtectedClientPage() {
     const { data: session } = useSession({
-        required: true,
+        /* required: true,
         onUnauthenticated() {
             redirect("/api/auth/signin?callbackUrl=/protected/client");
-        },
+        }, */
     });
 
     return (
@@ -27,6 +26,7 @@ export default function ProtectedClientPage() {
                     You are seeing this page, cause you have authorized
                     yourself!
                 </p>
+                <pre>{session?.user?.email}</pre>
             </div>
         </section>
     );

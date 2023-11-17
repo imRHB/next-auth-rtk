@@ -1,5 +1,4 @@
 import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
 
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
@@ -10,10 +9,6 @@ export const metadata = {
 
 export default async function ProtectedServerPage() {
     const session = await getServerSession(authOptions);
-
-    if (!session) {
-        redirect("/api/auth/signin?callbackUrl=/protected/server");
-    }
 
     return (
         <section>
@@ -26,6 +21,7 @@ export default async function ProtectedServerPage() {
                     You are seeing this page, cause you have authorized
                     yourself!
                 </p>
+                <pre>{session?.user?.email}</pre>
             </div>
         </section>
     );

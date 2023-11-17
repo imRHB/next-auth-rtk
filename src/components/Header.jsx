@@ -15,7 +15,7 @@ export default async function Header() {
 
     return (
         <header>
-            <nav className="px-6 py-2 w-fit mx-auto flex flex-wrap justify-center gap-2 text-zinc-600 bg-white ring-1 ring-zinc-200 backdrop-filter backdrop-blur-lg bg-opacity-60 rounded-md md:rounded-full uppercase select-none">
+            <nav className="px-2 py-0 w-fit mx-auto flex flex-wrap justify-center gap-2 text-zinc-600 bg-white ring-1 ring-zinc-200 backdrop-filter backdrop-blur-lg bg-opacity-60 rounded-md md:rounded-full uppercase select-none">
                 {navigation.map((item) => (
                     <AppLink
                         key={item.href}
