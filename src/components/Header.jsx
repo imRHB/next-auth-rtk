@@ -9,6 +9,7 @@ const navigation = [
     { name: "Protected (server)", href: "/protected/server" },
     { name: "Profile", href: "/profile" },
     { name: "Admin", href: "/admin" },
+    { name: "User", href: "/user" },
 ];
 
 export default async function Header() {

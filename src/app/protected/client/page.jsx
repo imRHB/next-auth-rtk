@@ -2,17 +2,12 @@
 
 import { useSession } from "next-auth/react";
 
-/* export const metadata = {
-    title: "Protected (Client)",
-    description: "Protected page with client side rendering!",
-}; */
-
 export default function ProtectedClientPage() {
     const { data: session } = useSession({
-        /* required: true,
+        required: true,
         onUnauthenticated() {
             redirect("/api/auth/signin?callbackUrl=/protected/client");
-        }, */
+        },
     });
 
     return (

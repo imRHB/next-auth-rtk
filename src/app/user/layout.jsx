@@ -5,21 +5,23 @@ export const metadata = {
     description: "User information!",
 };
 
-const navigation = [
-    { name: "User 1", href: "/user/1" },
-    { name: "User 2", href: "/user/2" },
-    { name: "User 3", href: "/user/3" },
-];
+async function getServerSideProps() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
 
-export default function RootLayout({ children }) {
+    return res.json();
+}
+
+export default async function RootLayout({ children }) {
+    const users = await getServerSideProps();
+
     return (
         <section className="grid grid-cols-1 sm:grid-cols-4 gap-4 sm:gap-8 sm:divide-x">
             <nav className="flex flex-col justify-center gap-1 text-zinc-600 uppercase select-none">
-                {navigation.map((item) => (
+                {users.map((user) => (
                     <TextLink
-                        key={item.href}
-                        name={item.name}
-                        href={item.href}
+                        key={user.id}
+                        name={user.name}
+                        href={`/user/${user.id}`}
                     />
                 ))}
             </nav>
