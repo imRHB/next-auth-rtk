@@ -28,7 +28,7 @@ export default async function UserDetails({ params }) {
                         <br />
                         {user.address.city}
                     </address>
-                    <tel>{user.phone}</tel>
+                    <code>{user.phone}</code>
                     <a
                         href={`https://${user.website}`}
                         target="_blank"
