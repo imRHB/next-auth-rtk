@@ -1,7 +1,8 @@
 import { getServerSession } from "next-auth";
 
 import Link from "next/link";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+
+import { authOptions } from "../api/auth/[...nextauth]/options";
 
 export const metadata = {
     title: "Profile",

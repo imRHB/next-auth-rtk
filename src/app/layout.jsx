@@ -5,7 +5,8 @@ import { getServerSession } from "next-auth";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import AuthProvider from "./(components)/AuthProvider";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+
+import { authOptions } from "./api/auth/[...nextauth]/options";
 
 export const metadata = {
     title: "Next JS | Next Auth | RTK",
