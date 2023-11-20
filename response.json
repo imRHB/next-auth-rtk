@@ -1,0 +1,30 @@
+{
+    "jwt ~ token": {
+        "name": "Rakib Hasan Babu",
+        "email": "rhbabu3@gmail.com",
+        "sub": "86858060",
+        "role": "ADMIN",
+        "iat": 1700416599,
+        "exp": 1703008599,
+        "jti": "b99901b6-86f0-4296-bb3b-3ded7f379644"
+    },
+
+    "session ~ session": {
+        "user": {
+            "name": "Rakib Hasan Babu",
+            "email": "rhbabu3@gmail.com",
+            "image": "undefined"
+        },
+        "expires": "2023-12-19T18:10:34.537Z"
+    },
+
+    "session ~ token": {
+        "name": "Rakib Hasan Babu",
+        "email": "rhbabu3@gmail.com",
+        "sub": "86858060",
+        "role": "ADMIN",
+        "iat": 1700417474,
+        "exp": 1703009474,
+        "jti": "cd7a930f-6d85-4ccb-9aea-50f2bf01e3c8"
+    }
+}

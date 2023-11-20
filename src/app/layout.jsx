@@ -2,10 +2,9 @@ import "../styles/tailwind.css";
 
 import { getServerSession } from "next-auth";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Footer from "@/app/(components)/Footer";
+import Header from "@/app/(components)/Header";
 import AuthProvider from "./(components)/AuthProvider";
-
 import { authOptions } from "./api/auth/[...nextauth]/options";
 
 export const metadata = {

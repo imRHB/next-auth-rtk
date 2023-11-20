@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 
 export default withAuth(
     function middleware(req) {
+        // write role base logic here as much as needed
         if (
             req.nextUrl.pathname.startsWith("/admin") &&
             req.nextauth.token.role !== "ADMIN"
@@ -14,6 +15,8 @@ export default withAuth(
     },
     {
         callbacks: {
+            // this should be returned boolean value
+            // for true case, above middleware function will be called
             authorized: ({ token }) => !!token,
         },
     }

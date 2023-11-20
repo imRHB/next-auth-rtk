@@ -1,4 +1,4 @@
-import TextLink from "@/components/TextLink";
+import TextLink from "@/app/(components)/TextLink";
 
 export const metadata = {
     title: "User",
@@ -16,7 +16,7 @@ export default async function RootLayout({ children }) {
 
     return (
         <section className="grid grid-cols-1 sm:grid-cols-4 gap-4 sm:gap-8 sm:divide-x">
-            <nav className="flex flex-col justify-center gap-1 text-zinc-600 uppercase select-none">
+            <nav className="flex flex-col justify-center gap-1 text-zinc-600 select-none">
                 {users.map((user) => (
                     <TextLink
                         key={user.id}

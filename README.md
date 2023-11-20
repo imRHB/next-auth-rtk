@@ -1,1 +1,5 @@
 -   https://nextjs.org/docs/pages/building-your-application/upgrading/app-router-migration
+-   https://stackoverflow.com/questions/75239138/set-authorization-header-in-rtk-query-with-next-auth
+-   https://stackoverflow.com/questions/74984195/how-to-decrypt-session-token-next-auth-jwt-token
+-   https://github.com/SantiMA10/nextjs-redux (E:\Programming\Trash)
+-   https://dev.to/esponges/building-a-secure-nextjs-application-with-redux-toolkit-query-and-cookie-tokens-2en2
