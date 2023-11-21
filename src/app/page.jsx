@@ -1,4 +1,16 @@
+"use client";
+
+import { useSelector } from "react-redux";
+
+import SimpleSignInForm from "./(components)/SimpleSignInForm";
+
 export default function Home() {
+    const isAuth = useSelector((state) => state.authReducer.value.isAuth);
+    const username = useSelector((state) => state.authReducer.value.username);
+    const moderator = useSelector(
+        (state) => state.authReducer.value.isModerator
+    );
+
     return (
         <section className="text-zinc-700 space-y-8">
             <div className="space-y-2">
@@ -58,6 +70,21 @@ export default function Home() {
                     Redux for state management and need to manage data fetched
                     from APIs.
                 </p>
+            </div>
+
+            <div className="border-t border-dashed space-y-4">
+                <h3 className="text-lg font-semibold">
+                    Username: <span className="font-normal">{username}</span>
+                </h3>
+                <h3>
+                    {isAuth
+                        ? isAuth && moderator
+                            ? `${username} is MODERATOR`
+                            : `${username} is not MODERATOR`
+                        : "No user signed in"}
+                </h3>
+
+                <SimpleSignInForm />
             </div>
         </section>
     );

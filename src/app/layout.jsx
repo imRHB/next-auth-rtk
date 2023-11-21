@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth";
 import Footer from "@/app/(components)/Footer";
 import Header from "@/app/(components)/Header";
 import AuthProvider from "./(components)/AuthProvider";
+import ReduxProvider from "./(components)/ReduxProvider";
 import { authOptions } from "./api/auth/[...nextauth]/options";
 
 export const metadata = {
@@ -18,15 +19,17 @@ export default async function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className="bg-zinc-50" suppressHydrationWarning={true}>
-                <AuthProvider session={session}>
-                    <div className="mx-2 md:mx-0 sticky top-8 z-50">
-                        <Header />
-                    </div>
-                    <main className="container mx-auto max-w-5xl p-2 sm:p-4 md:p-6 xl:p-8">
-                        <div className="my-20 min-h-[50vh]">{children}</div>
-                    </main>
-                    <Footer />
-                </AuthProvider>
+                <ReduxProvider>
+                    <AuthProvider session={session}>
+                        <div className="mx-2 md:mx-0 sticky top-8 z-50">
+                            <Header />
+                        </div>
+                        <main className="container mx-auto max-w-5xl p-2 sm:p-4 md:p-6 xl:p-8">
+                            <div className="my-20 min-h-[50vh]">{children}</div>
+                        </main>
+                        <Footer />
+                    </AuthProvider>
+                </ReduxProvider>
             </body>
         </html>
     );
